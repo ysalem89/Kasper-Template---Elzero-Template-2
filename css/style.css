@@ -1,0 +1,1170 @@
+/*
+    1- General Styles
+    2- Common Styles
+    3- Sections 
+        3.1 Home Section
+            3.1.1 Header (Navigation) Section
+            3.1.2 Home Info Section
+            3.1.3 Home Slider Navigation
+        3.2 Services Section  
+        3.3 Features Section
+        3.4 Portfolio Section
+        3.5 Video Section
+        3.6 About Section
+        3.7 Statistics Section
+        3.8 Skills and Testimonials Section
+        3.9 Quote 
+        3.7 Pricing Section 
+        3.8 Subscribe Section   
+        3.9 Contact Section
+        3.10 Footer Section 
+        3.11 Move Up Link
+        
+*/
+
+/*1- General Styles */
+:root {
+  --boxColor: #0f748f;
+  --mainColor: #00c7fc;
+  --paragraphColor: #a8a8a8;
+  --blackColor: #1f2021;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--blackColor, #1f2021);
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: color 0.2s, background-color 0.2s;
+  transition: color 0.2s, background-color 0.2s;
+  color: var(--blackColor, #1f2021);
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  font-size: 14px;
+  line-height: 2;
+  color: var(--paragraphColor, #a8a8a8);
+}
+
+/* 2- Common Style */
+/*
+    1- Container
+    2- Grid System
+    3- Section Header
+    4- Inputs / Buttons ( Blue button, black button, outline button)
+    5- Section padding (100px)
+    6- Background Image Overlay
+    7- Info Box ( background blue, color white, opacity, padding-y
+    8- Grey paragraph color
+    9- Clearfix float
+    10- Bullets
+*/
+
+/* 1- Container */
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  /* background-color: red; */
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* 2- Grid System  */
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* For Mobiles */
+
+[class^="col-"] {
+  float: left;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* For Tablets */
+@media (min-width: 768px) {
+  .col-sm-6 {
+    width: 50%;
+  }
+}
+/* For Desktops */
+
+@media (min-width: 992px) {
+  .col-md-1 {
+    width: 8.333%;
+  }
+  .col-md-2 {
+    width: 16.666%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-4 {
+    width: 33.333%;
+  }
+  .col-md-5 {
+    width: 41.666%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-7 {
+    width: 58.333%;
+  }
+  .col-md-8 {
+    width: 66.666%;
+  }
+  .col-md-9 {
+    width: 75%;
+  }
+  .col-md-10 {
+    width: 83.33%;
+  }
+  .col-md-11 {
+    width: 91.666;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+}
+
+/* 3- Section Header */
+
+.section-header {
+  width: 500px;
+  max-width: 100%;
+  padding: 0 20px;
+  margin: 0 auto 100px;
+  text-align: center;
+}
+
+.section-header .section-title {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.section-header .section-title::before,
+.section-header .section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.section-header .section-title::before {
+  width: 100px;
+  height: 2px;
+  bottom: -20px;
+  background-color: var(--blackColor, #1f2021);
+}
+
+.section-header .section-title::after {
+  width: 10px;
+  height: 10px;
+  bottom: -26px;
+  border-radius: 50%;
+  border: 2px solid var(--blackColor, #1f2021);
+  background-color: #fff;
+  z-index: 10;
+}
+
+.section-header .section-desc {
+  color: var(--paragraphColor, #a8a8a8);
+  line-height: 2;
+}
+
+/* 4- Inputs / Buttons ( Blue button, black button, outline button) */
+input,
+textarea {
+  font-family: inherit;
+  width: 100%;
+  outline: none;
+}
+
+::placeholder {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 14px;
+}
+
+.btn {
+  display: block;
+  border: 2px solid transparent;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-blue {
+  background-color: var(--mainColor, #00c7fc);
+  color: #fff;
+}
+
+.btn-black {
+  background-color: var(--blackColor, #1f2021);
+  color: #fff;
+}
+
+.btn-outline {
+  border-color: var(--mainColor, #00c7fc);
+}
+
+/* 5- Section padding (100px) */
+
+.pd-y {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.pd-t {
+  padding-top: 100px;
+}
+
+.pd-b {
+  padding-bottom: 100px;
+}
+
+/* 6- Background Image Overlay */
+.bg-overlay {
+  position: relative;
+  background-size: cover;
+  background-color: var(--blackColor, #1f2021);
+  z-index: 1;
+}
+
+.bg-overlay:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgb(31, 32, 33, 0.7);
+}
+
+/* 7- Info Box ( background blue, color white, opacity, padding-y */
+
+.info-box {
+  background-color: rgb(15, 116, 143, 0.7);
+}
+
+.info-box * {
+  color: #fff;
+}
+
+/* 8- Grey paragraph color */
+.grey-text {
+  color: var(--paragraphColor, #a8a8a8);
+}
+
+.white-text {
+  color: #fff;
+}
+
+.black-text {
+  color: var(--blackColor, #1f2021);
+}
+
+/* 9- Clearfix float */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* 10- Bullets */
+.bullets {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bullets span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.bullets span.active {
+  background-color: var(--mainColor, #00c7fc);
+  border-color: var(--mainColor, #00c7fc);
+}
+
+/* 3- Sections */
+
+/* 3.1 Home Section */
+
+#home {
+  height: 100vh;
+  transition: background-image 0.5s;
+}
+
+/* 3.1.1 Header Section */
+
+.header {
+  position: relative;
+  padding-right: 80px;
+  border-bottom: 1px solid #fff;
+  min-height: 90px;
+}
+
+.header .logo {
+  float: left;
+  margin: 22px 0;
+}
+
+.header .nav {
+  float: right;
+}
+
+.header .nav li {
+  display: inline-block;
+}
+
+.header .nav li a {
+  color: #fff;
+  font-size: 14px;
+  padding: 35px 12px;
+  display: block;
+  position: relative;
+}
+
+.header .nav li a.active,
+.header .nav li a:hover {
+  color: var(--mainColor, #00c7fc);
+}
+
+.header .nav li a:hover:after,
+.header .nav li a.active:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  border-bottom: 1px solid var(--mainColor, #00c7fc);
+}
+
+.header .toggle-menu {
+  float: right;
+  color: #fff;
+  font-size: 25px;
+  margin: 32px 0;
+  display: none;
+  font-weight: thin;
+}
+
+.header .search {
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding-left: 20px;
+  border-left: 1px solid #fff;
+}
+
+@media (max-width: 767px) {
+  .header .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgb(31, 32, 33, 0.9);
+    z-index: 10;
+  }
+
+  .header .nav li {
+    display: block;
+  }
+
+  .header .nav li a {
+    padding: 15px;
+  }
+
+  .header .nav.open {
+    display: block;
+  }
+
+  .header .toggle-menu {
+    display: block;
+  }
+}
+
+/* 3.1.2 Home Info Section */
+
+.home-info {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.home-content {
+  max-width: 500px;
+  margin-left: auto;
+  padding: 40px;
+}
+
+.home-content .home-title {
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+  .home-content {
+    padding: 30px 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-info {
+    width: 100%;
+  }
+
+  .home-content {
+    margin-left: 0;
+  }
+
+  .home-content .home-title {
+    font-size: 28px;
+  }
+
+  .home-content .home-desc {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content .home-title {
+    font-size: 24px;
+  }
+}
+
+/* 3.1.3 Home Slider Navigation */
+
+.change-background {
+  position: absolute;
+  color: #fff;
+  font-size: 40px;
+  top: 50%;
+  cursor: pointer;
+  -webkit-transition: transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.change-background.right {
+  right: 20px;
+}
+.change-background.left {
+  left: 20px;
+}
+
+.change-background:hover {
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+@media (max-width: 991px) {
+  .change-background {
+    font-size: 35px;
+  }
+
+  .change-background.right {
+    right: 15px;
+  }
+
+  .change-background.left {
+    left: 15px;
+  }
+}
+
+/* 3.2  Services Section     */
+
+.service {
+  margin: 20px 0;
+  padding: 20px 20px 20px 100px;
+  position: relative;
+}
+
+.service i {
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  font-size: 40px;
+}
+
+.service-title {
+  font-size: 20px;
+  color: var(--mainColor, #00c7fc);
+  margin-bottom: 15px;
+}
+
+/* 3.3 Features Section */
+
+.features {
+  height: 500px;
+  overflow: hidden;
+}
+
+.features-img {
+  text-align: right;
+  padding: 120px 60px 60px;
+  top: 50%;
+  left: 0;
+  width: 50%;
+}
+
+.features-info {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 50%;
+  padding: 50px 40px;
+}
+
+.features-title {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.feature-list li {
+  padding: 10px 0;
+  text-transform: capitalize;
+}
+
+.feature-list li i {
+  margin-right: 10px;
+}
+
+@media (max-width: 767px) {
+  .features-info {
+    width: 100%;
+  }
+
+  .features-img {
+    display: none;
+  }
+}
+
+/* 3.4 Portfolio Section */
+
+.menu-list {
+  margin: 0 auto 45px;
+  width: fit-content;
+}
+
+.menu-list li {
+  float: left;
+}
+
+.menu-list li a {
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.menu-list li a:hover,
+.menu-list li a.active {
+  background-color: var(--mainColor, #00c7fc);
+  color: #fff;
+}
+
+.portfolio {
+  max-width: 600px;
+  margin: 0 -20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio img {
+  display: block;
+  max-width: 100%;
+  -webkit-transition: transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.portfolio-caption {
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  -webkit-transition: bottom 0.2s;
+  transition: bottom 0.2s;
+  padding: 15px 30px;
+}
+
+.portfolio:hover .portfolio-caption {
+  bottom: 0;
+}
+
+.portfolio:hover img {
+  -webkit-transform: rotate(3deg) scale(1.1);
+  -moz-transform: rotate(3deg) scale(1.1);
+  transform: rotate(3deg) scale(1.1);
+}
+
+.portfolio-title {
+  font-weight: normal;
+  font-size: 16px;
+  margin: 0;
+}
+
+.portfolio-text {
+  color: var(--mainColor, #00c7fc);
+  font-size: 14px;
+}
+
+#portfolio .btn-blue {
+  margin: 35px auto 50px;
+  width: 175px;
+  height: 40px;
+}
+
+/* 3.5 Video Section */
+
+.video.bg-overlay::before {
+  background-color: rgb(31, 32, 33, 0.5);
+}
+
+.video video {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 /9;
+}
+
+.video-caption {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.video-title {
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.video-text {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 15px 0 25px;
+}
+
+.video .btn-black {
+  margin: auto;
+  width: 120px;
+  height: 35px;
+}
+
+/* 3.6 About Section */
+
+#about {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .about-img {
+    max-width: 100%;
+    position: relative;
+    left: -10px;
+  }
+}
+
+/* ---- 3.7 Statistics Section */
+
+#stats {
+  margin-top: -150px;
+  padding: 100px 0;
+  text-align: center;
+}
+
+#stats .row {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.stats {
+  padding: 25px 10px 35px;
+}
+
+.stats .icon {
+  font-size: 20px;
+  background-color: var(--blackColor, #1f2021);
+  border-radius: 50%;
+  line-height: 40px;
+  width: 40px;
+  margin-bottom: 15px;
+}
+
+.stats-title {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 767px) {
+  #stats {
+    margin-top: -70px;
+  }
+}
+
+/* ------- 3.8 Skills and Testimonials Section */
+
+.our-skills {
+  text-align: center;
+}
+
+.testimonials {
+  padding-right: 8.33%;
+  padding-left: 30px;
+  margin-bottom: 40px;
+}
+
+.skills {
+  padding-left: 8.33%;
+}
+
+@media (max-width: 767px) {
+  .testimonials,
+  .skills {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.testimonials .title,
+.skills .title {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.testimonials .desc,
+.skills .desc {
+  margin-bottom: 60px;
+}
+
+/* 3.6.2  Testimonials Section */
+
+.testimonials .post {
+  padding: 0 0 60px 150px;
+  position: relative;
+  text-align: left;
+}
+
+.post-img {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  left: 10px;
+  top: 0;
+}
+
+.post-content {
+  border-bottom: 1px solid var(--paragraphColor, #a8a8a8);
+  padding-bottom: 15px;
+}
+
+.post-author {
+  display: block;
+  font-size: 14px;
+  color: var(--paragraphColor, #a8a8a8);
+  font-style: italic;
+  text-align: right;
+}
+
+.testimonials .bullets {
+  position: relative;
+  margin-top: 40px;
+}
+
+.testimonials .bullets span:not(.active) {
+  border: 1px solid var(--paragraphColor, #a8a8a8);
+}
+
+/* 3.6.3  Skills Section */
+
+.skill {
+  margin-bottom: 35px;
+  text-align: left;
+}
+
+.skill-title {
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+
+.skill-progress {
+  width: 100%;
+  height: 30px;
+  background-color: #eee;
+}
+
+.skill-progress span {
+  display: block;
+  height: 100%;
+  position: relative;
+  background-color: var(--mainColor, #00c7fc);
+}
+
+.skill-progress span:after {
+  content: attr(data-progress);
+  position: absolute;
+  right: 0;
+  top: -8px;
+  background-color: var(--blackColor, #1f2021);
+  color: #fff;
+  font-size: 14px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  -webkit-transform: translate(50%, -100%);
+  -moz-transform: translate(50%, -100%);
+  transform: translate(50%, -100%);
+}
+
+.skill-progress span:before {
+  content: "";
+  position: absolute;
+  border: 8px solid transparent;
+  border-color: #1f2021 transparent transparent transparent;
+  right: 0;
+  top: -2px;
+  -webkit-transform: translate(50%, -50%);
+  -moz-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+}
+
+/* 3.6.4 Quote  */
+
+.quote {
+  padding-right: 60px;
+  padding-left: 60px;
+}
+.quote q {
+  font-size: 30px;
+  line-height: 1.2;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* 3.7 Pricing Section  */
+
+.pricing-plan {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.pricing-header {
+  padding: 15px 0;
+  border: 1px solid var(--mainColor, #00c7fc);
+  border-width: 1px 0 1px;
+}
+
+.pricing-title {
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.price {
+  display: block;
+  margin: 10px 0;
+  font-size: 60px;
+  font-weight: 600;
+}
+
+.price sub {
+  font-size: 14px;
+}
+
+.price sup {
+  font-size: 21px;
+  vertical-align: top;
+}
+
+.features-list {
+  border-bottom: 1px solid var(--mainColor, #00c7fc);
+}
+
+.features-list li {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 20px 10px;
+  border-bottom: 1px solid var(--mainColor, #00c7fc);
+}
+
+.features-list li:last-child {
+  border: 0;
+}
+
+.pricing-plan .btn-outline {
+  width: 140px;
+  height: 50px;
+  margin: 40px auto;
+  color: var(--blackColor, #1f2021);
+  text-transform: capitalize;
+}
+
+.contact-text {
+  font-size: 20px;
+  text-align: center;
+  margin: 50px 0 30px;
+}
+
+.contact-btn {
+  width: 140px;
+  height: 50px;
+  margin: 30px auto 20px;
+  text-transform: capitalize;
+}
+
+/* 3.8 Subscribe Section  */
+
+.subscribe-form {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+.subscribe-form input {
+  padding: 14px 160px 14px 50px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 16px;
+}
+
+.subscribe-btn {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  height: 50px;
+  width: 140px;
+}
+
+.subscribe-form i {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.subscribe-text {
+  font-size: 15px;
+}
+
+@media (max-width: 480px) {
+  .subscribe-btn {
+    position: static;
+    margin: 10px auto;
+    width: 100%;
+    /* font-size: 12px; */
+  }
+
+  .subscribe-form input {
+    padding-right: 15px;
+    font-size: 14px;
+  }
+}
+
+/* 3.9 Contact Section  */
+
+.contact-form .main-input {
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 1px solid var(--paragraphColor, #1f2021);
+}
+
+.contact-form ::placeholder {
+  color: var(--paragraphColor, #a8a8a8);
+}
+
+.contact-form .send-btn {
+  width: 160px;
+  height: 50px;
+  margin-left: auto;
+}
+
+.contact-info h4 {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.contact-info span {
+  display: block;
+  color: var(--paragraphColor, #a8a8a8);
+  font-size: 14px;
+}
+
+.contact-info h4:nth-of-type(2) {
+  margin-top: 50px;
+}
+
+.contact-info h4:nth-of-type(2) ~ span {
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  #contact {
+    position: relative;
+  }
+
+  .contact-form {
+    padding-top: 250px;
+  }
+
+  .contact-info {
+    position: absolute;
+    top: 300px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* 3.10 Footer Section  */
+
+#footer {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.footer-text {
+  display: block;
+  text-transform: uppercase;
+  font-size: 28px;
+  padding: 60px 20px 20px;
+  border-bottom: 1px solid #fff;
+  width: fit-content;
+  margin: 0 auto 40px;
+}
+
+.social-media {
+  margin: 10px 0 40px;
+}
+
+.social-media li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-media li a {
+  font-size: 22px;
+}
+
+.copyright {
+  font-size: 16px;
+}
+
+.copyright span {
+  color: var(--mainColor, #00c7fc);
+  font-weight: 500;
+}
+
+/* 3.11 Move Up Link */
+
+#moveUp {
+  position: fixed;
+  bottom: -100px;
+  right: 20px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  color: #fff;
+  background-color: var(--mainColor, #00c7fc);
+  z-index: 100;
+  -webkit-transition: all 0.2s;
+  transition: visibility 0.2s, opacity 0.2s, bottom 0.2s 0.1s;
+}
